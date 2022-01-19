@@ -1,15 +1,18 @@
 import "./App.scss"
-import NavBar from "./components/NavBar/NavBar";
 import Search from "./containers/Search/Search";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Add from "./containers/Add/Add";
 
 
 const App = () => {
+  
   return (
-    <div className="App">
-      <Search />
-      
-      <NavBar />
-    </div>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Search />} />
+          <Route path="/add-animal" element={<Add />} />
+        </Routes>
+      </Router>
   );
 }
 
